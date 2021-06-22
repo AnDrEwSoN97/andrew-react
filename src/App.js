@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import React,{ useEffect } from 'react';
 
 function App() {
+
+useEffect(() => {
+  fetch(".netlify/functions/hello-world")
+  .then(x => x.json())
+  .then(data => console.log(data))
+}, [] )
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +23,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          My key is {process.env.REACT_APP_MY_KEY}
+          My key is :)-- {process.env.REACT_APP_MY_KEY}
         </a>
       </header>
     </div>
